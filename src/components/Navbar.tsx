@@ -29,7 +29,7 @@ const Navbar = () => {
               <img 
                 src="/lovable-uploads/f9f78053-63ce-481b-b0ae-b570b13ad6c9.png" 
                 alt="Catalift Logo" 
-                className="h-10 w-auto"
+                className="h-16 w-auto" 
               />
             </a>
           </div>
