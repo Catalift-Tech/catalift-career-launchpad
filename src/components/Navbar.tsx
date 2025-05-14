@@ -26,7 +26,15 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-[#03045E]">Cata<span className="text-blue-400">lift</span></span>
+              <div className="h-10 w-28 relative flex items-center">
+                <div className="bg-white p-1 rounded">
+                  <img 
+                    src="/lovable-uploads/7af15cd7-0050-4575-b394-89baf2b0e2a7.png" 
+                    alt="Catalift Logo" 
+                    className="h-8" 
+                  />
+                </div>
+              </div>
             </a>
           </div>
 
