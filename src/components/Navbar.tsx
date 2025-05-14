@@ -29,7 +29,7 @@ const Navbar = () => {
               <div className="h-10 w-28 relative flex items-center">
                 <div className="bg-white p-1 rounded">
                   <img 
-                    src="/lovable-uploads/7af15cd7-0050-4575-b394-89baf2b0e2a7.png" 
+                    src="/lovable-uploads/569df2d6-f165-45d3-ae65-8553be2c5977.png" 
                     alt="Catalift Logo" 
                     className="h-8" 
                   />
