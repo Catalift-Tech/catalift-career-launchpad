@@ -21,20 +21,16 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-white py-4'}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <div className="h-10 w-28 relative flex items-center">
-                <div className="bg-white p-1 rounded">
-                  <img 
-                    src="/lovable-uploads/569df2d6-f165-45d3-ae65-8553be2c5977.png" 
-                    alt="Catalift Logo" 
-                    className="h-8" 
-                  />
-                </div>
-              </div>
+              <img 
+                src="/lovable-uploads/f9f78053-63ce-481b-b0ae-b570b13ad6c9.png" 
+                alt="Catalift Logo" 
+                className="h-10 w-auto"
+              />
             </a>
           </div>
 
