@@ -21,7 +21,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-white py-4'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-1' : 'bg-white py-2'}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
@@ -29,7 +29,7 @@ const Navbar = () => {
               <img 
                 src="/lovable-uploads/f9f78053-63ce-481b-b0ae-b570b13ad6c9.png" 
                 alt="Catalift Logo" 
-                className="h-16 w-auto" 
+                className="h-20 w-auto" 
               />
             </a>
           </div>
