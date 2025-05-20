@@ -40,7 +40,10 @@ const Navbar = () => {
             <a href="#cohorts" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">Cohorts</a>
             <a href="#webinars" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">Webinars</a>
             <a href="#testimonials" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">Testimonials</a>
-            <Button asChild className="bg-[#03045E] hover:bg-blue-800">
+            <Button asChild variant="outline" className="ml-4">
+              <a href="#get-started">Log In</a>
+            </Button>
+            <Button asChild className="ml-2 bg-[#03045E] hover:bg-blue-800">
               <a href="#get-started">Get Started</a>
             </Button>
           </div>
@@ -88,6 +91,9 @@ const Navbar = () => {
               >
                 Testimonials
               </a>
+              <Button asChild variant="outline" className="w-full">
+                <a href="#get-started" onClick={() => setMobileMenuOpen(false)}>Log In</a>
+              </Button>
               <Button asChild className="w-full bg-[#03045E] hover:bg-blue-800">
                 <a href="#get-started" onClick={() => setMobileMenuOpen(false)}>Get Started</a>
               </Button>
