@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Download } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CtaSection = () => {
   return (
@@ -31,9 +32,9 @@ const CtaSection = () => {
             
             <div className="flex flex-col sm:flex-row items-center gap-6">
               <Button asChild variant="outline" className="border-white/30 text-white hover:bg-white/10 flex items-center gap-2">
-                <a href="#download">
+                <Link to="/coming-soon">
                   <Download className="h-4 w-4" /> Download App
-                </a>
+                </Link>
               </Button>
               
               <div className="flex items-center">
