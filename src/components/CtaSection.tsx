@@ -25,7 +25,7 @@ const CtaSection = () => {
             
             <div className="">
               <Button asChild variant="outline" className="border-white/30 text-white hover:bg-white/10 flex items-center gap-2">
-                <Link to="/coming-soon" className="">
+                <Link to="/coming-soon" className="bg-white text-[#03045E] hover:bg-blue-100 whitespace-nowrap">
                   <Download className="h-4 w-4" /> Download App
                 </Link>
               </Button>
