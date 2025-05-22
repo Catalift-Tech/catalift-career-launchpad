@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,7 +45,7 @@ const Navbar = () => {
               <a href="#get-started">Log In</a>
             </Button>
             <Button asChild className="ml-2 bg-[#03045E] hover:bg-blue-800">
-              <a href="#get-started">Get Started</a>
+              <Link to="/coming-soon">Get Started</Link>
             </Button>
           </div>
 
@@ -95,7 +96,7 @@ const Navbar = () => {
                 <a href="#get-started" onClick={() => setMobileMenuOpen(false)}>Log In</a>
               </Button>
               <Button asChild className="w-full bg-[#03045E] hover:bg-blue-800">
-                <a href="#get-started" onClick={() => setMobileMenuOpen(false)}>Get Started</a>
+                <Link to="/coming-soon" onClick={() => setMobileMenuOpen(false)}>Get Started</Link>
               </Button>
             </div>
           </div>
