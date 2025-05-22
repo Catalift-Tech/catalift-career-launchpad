@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -24,7 +25,7 @@ const Hero = () => {
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <a href="#download">Download the App</a>
+                <Link to="/coming-soon">Download the App</Link>
               </Button>
             </div>
             <div className="mt-8 text-gray-600 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
