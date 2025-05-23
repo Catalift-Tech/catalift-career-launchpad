@@ -2,8 +2,9 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, UserPlus } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const CtaSection = () => {
   return <section id="get-started" className="py-20 bg-[#03045E] text-white">
       <div className="container mx-auto px-4 md:px-6">
@@ -28,6 +29,12 @@ const CtaSection = () => {
               <Button asChild className="bg-white text-[#03045E] hover:bg-blue-100 whitespace-nowrap">
                 <Link to="/coming-soon" className="flex items-center gap-2">
                   <Download className="h-4 w-4" /> Download App
+                </Link>
+              </Button>
+              
+              <Button asChild className="bg-blue-500 text-white hover:bg-blue-600 whitespace-nowrap">
+                <Link to="/coming-soon" className="flex items-center gap-2">
+                  <UserPlus className="h-4 w-4" /> Become a Mentor
                 </Link>
               </Button>
               
