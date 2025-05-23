@@ -1,11 +1,37 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Download } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
+
 const CtaSection = () => {
-  return <section id="get-started" className="py-20 bg-[#03045E] text-white">
+  const [email, setEmail] = useState('');
+  const { toast } = useToast();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      toast({
+        title: "Great! Let's continue your registration",
+        description: "Redirecting you to complete your sign up...",
+      });
+      
+      // Navigate to sign up page with the email prefilled
+      navigate('/sign-up', { state: { email } });
+    } else {
+      toast({
+        title: "Email required",
+        description: "Please enter your email to continue.",
+        variant: "destructive"
+      });
+    }
+  };
+  
+  return (
+    <section id="get-started" className="py-20 bg-[#03045E] text-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -16,12 +42,18 @@ const CtaSection = () => {
             
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl mb-8">
               <h3 className="text-xl font-bold mb-4">Get Early Access</h3>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Input type="email" placeholder="Enter your email" className="bg-white/20 border-white/30 text-white placeholder:text-white/60 focus-visible:ring-blue-400" />
-                <Button className="bg-white text-[#03045E] hover:bg-blue-100 whitespace-nowrap">
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+                <Input 
+                  type="email" 
+                  placeholder="Enter your email" 
+                  className="bg-white/20 border-white/30 text-white placeholder:text-white/60 focus-visible:ring-blue-400" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Button type="submit" className="bg-white text-[#03045E] hover:bg-blue-100 whitespace-nowrap">
                   Get Started <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-              </div>
+              </form>
             </div>
             
             <div className="flex flex-col sm:flex-row items-center gap-6">
@@ -68,6 +100,8 @@ const CtaSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default CtaSection;

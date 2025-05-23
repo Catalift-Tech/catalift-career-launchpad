@@ -20,9 +20,9 @@ const Hero = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button asChild size="lg" className="bg-[#03045E] hover:bg-blue-800 text-white">
-                <a href="#get-started" className="flex items-center">
+                <Link to="/sign-up" className="flex items-center">
                   Get Matched With a Mentor <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
+                </Link>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <Link to="/coming-soon">Download the App</Link>

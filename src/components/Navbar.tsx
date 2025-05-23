@@ -41,7 +41,7 @@ const Navbar = () => {
             <a href="#cohorts" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">Cohorts</a>
             <a href="#webinars" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">Webinars</a>
             <Button asChild variant="outline" className="ml-4">
-              <a href="#get-started">Log In</a>
+              <Link to="/sign-in">Log In</Link>
             </Button>
             <Button asChild variant="outline" className="ml-2">
               <Link to="/coming-soon" className="flex items-center gap-1">
@@ -49,7 +49,7 @@ const Navbar = () => {
               </Link>
             </Button>
             <Button asChild className="ml-2 bg-[#03045E] hover:bg-blue-800">
-              <a href="#get-started">Get Started</a>
+              <Link to="/sign-up">Get Started</Link>
             </Button>
           </div>
 
@@ -90,7 +90,7 @@ const Navbar = () => {
                 Webinars
               </a>
               <Button asChild variant="outline" className="w-full">
-                <a href="#get-started" onClick={() => setMobileMenuOpen(false)}>Log In</a>
+                <Link to="/sign-in" onClick={() => setMobileMenuOpen(false)}>Log In</Link>
               </Button>
               <Button asChild variant="outline" className="w-full">
                 <Link to="/coming-soon" className="flex items-center justify-center gap-1" onClick={() => setMobileMenuOpen(false)}>
@@ -98,7 +98,7 @@ const Navbar = () => {
                 </Link>
               </Button>
               <Button asChild className="w-full bg-[#03045E] hover:bg-blue-800">
-                <a href="#get-started" onClick={() => setMobileMenuOpen(false)}>Get Started</a>
+                <Link to="/sign-up" onClick={() => setMobileMenuOpen(false)}>Get Started</Link>
               </Button>
             </div>
           </div>
