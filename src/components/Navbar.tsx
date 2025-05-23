@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, UserPlus } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -39,9 +40,13 @@ const Navbar = () => {
             <a href="#how-it-works" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">How It Works</a>
             <a href="#cohorts" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">Cohorts</a>
             <a href="#webinars" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">Webinars</a>
-            <a href="#testimonials" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">Testimonials</a>
             <Button asChild variant="outline" className="ml-4">
               <a href="#get-started">Log In</a>
+            </Button>
+            <Button asChild variant="outline" className="ml-2">
+              <Link to="/coming-soon" className="flex items-center gap-1">
+                <UserPlus size={18} /> Become a Mentor
+              </Link>
             </Button>
             <Button asChild className="ml-2 bg-[#03045E] hover:bg-blue-800">
               <a href="#get-started">Get Started</a>
@@ -84,15 +89,13 @@ const Navbar = () => {
               >
                 Webinars
               </a>
-              <a 
-                href="#testimonials" 
-                className="font-medium text-gray-700 hover:text-[#03045E] transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Testimonials
-              </a>
               <Button asChild variant="outline" className="w-full">
                 <a href="#get-started" onClick={() => setMobileMenuOpen(false)}>Log In</a>
+              </Button>
+              <Button asChild variant="outline" className="w-full">
+                <Link to="/coming-soon" className="flex items-center justify-center gap-1" onClick={() => setMobileMenuOpen(false)}>
+                  <UserPlus size={18} /> Become a Mentor
+                </Link>
               </Button>
               <Button asChild className="w-full bg-[#03045E] hover:bg-blue-800">
                 <a href="#get-started" onClick={() => setMobileMenuOpen(false)}>Get Started</a>
