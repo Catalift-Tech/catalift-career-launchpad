@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X, UserPlus } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -46,11 +45,6 @@ const Navbar = () => {
             </Button>
             <Button asChild className="ml-2 bg-[#03045E] hover:bg-blue-800">
               <a href="#get-started">Get Started</a>
-            </Button>
-            <Button asChild variant="ghost" className="text-blue-600 hover:text-blue-800 hover:bg-blue-50">
-              <Link to="/coming-soon" className="flex items-center gap-1">
-                <UserPlus className="h-4 w-4" /> Become a Mentor
-              </Link>
             </Button>
           </div>
 
@@ -102,11 +96,6 @@ const Navbar = () => {
               </Button>
               <Button asChild className="w-full bg-[#03045E] hover:bg-blue-800">
                 <a href="#get-started" onClick={() => setMobileMenuOpen(false)}>Get Started</a>
-              </Button>
-              <Button asChild variant="ghost" className="w-full text-blue-600 hover:text-blue-800 hover:bg-blue-50">
-                <Link to="/coming-soon" onClick={() => setMobileMenuOpen(false)} className="flex items-center justify-center gap-1">
-                  <UserPlus className="h-4 w-4" /> Become a Mentor
-                </Link>
               </Button>
             </div>
           </div>
