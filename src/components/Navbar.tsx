@@ -45,7 +45,7 @@ const Navbar = () => {
             </Button>
             <Button asChild variant="outline" className="ml-2">
               <Link to="/coming-soon" className="flex items-center gap-1">
-                <UserPlus size={18} /> Become a Mentor
+                <UserPlus size={18} /> For Mentor
               </Link>
             </Button>
             <Button asChild className="ml-2 bg-[#03045E] hover:bg-blue-800">
@@ -94,7 +94,7 @@ const Navbar = () => {
               </Button>
               <Button asChild variant="outline" className="w-full">
                 <Link to="/coming-soon" className="flex items-center justify-center gap-1" onClick={() => setMobileMenuOpen(false)}>
-                  <UserPlus size={18} /> Become a Mentor
+                  <UserPlus size={18} /> For Mentor
                 </Link>
               </Button>
               <Button asChild className="w-full bg-[#03045E] hover:bg-blue-800">
