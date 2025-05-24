@@ -44,7 +44,7 @@ const Navbar = () => {
               <Link to="/sign-in">Log In</Link>
             </Button>
             <Button asChild variant="outline" className="ml-2">
-              <Link to="/coming-soon" className="flex items-center gap-1">
+              <Link to="/mentor-signup" className="flex items-center gap-1">
                 <UserPlus size={18} /> For Mentor
               </Link>
             </Button>
@@ -93,7 +93,7 @@ const Navbar = () => {
                 <Link to="/sign-in" onClick={() => setMobileMenuOpen(false)}>Log In</Link>
               </Button>
               <Button asChild variant="outline" className="w-full">
-                <Link to="/coming-soon" className="flex items-center justify-center gap-1" onClick={() => setMobileMenuOpen(false)}>
+                <Link to="/mentor-signup" className="flex items-center justify-center gap-1" onClick={() => setMobileMenuOpen(false)}>
                   <UserPlus size={18} /> For Mentor
                 </Link>
               </Button>

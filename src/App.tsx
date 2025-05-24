@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import ComingSoon from "./pages/ComingSoon";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import MentorSignUp from "./pages/MentorSignUp";
 import Dashboard from "./pages/Dashboard";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/coming-soon" element={<ComingSoon />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/mentor-signup" element={<MentorSignUp />} />
           <Route path="/dashboard" element={<Dashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

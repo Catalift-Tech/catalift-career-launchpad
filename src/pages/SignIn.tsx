@@ -30,7 +30,7 @@ const SignIn = () => {
           title: "Success!",
           description: "You have successfully signed in.",
         });
-        navigate('/dashboard');
+        navigate('/');
       } else {
         toast({
           title: "Error",

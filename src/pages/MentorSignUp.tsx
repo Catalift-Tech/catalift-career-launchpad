@@ -11,16 +11,19 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
   password: z.string().min(8, { message: "Password must be at least 8 characters" }),
+  company: z.string().min(2, { message: "Company name is required" }),
+  yearsOfExperience: z.string().min(1, { message: "Years of experience is required" }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
-const SignUp = () => {
+const MentorSignUp = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const { toast } = useToast();
   const navigate = useNavigate();
@@ -31,6 +34,8 @@ const SignUp = () => {
       name: "",
       email: "",
       password: "",
+      company: "",
+      yearsOfExperience: "",
     },
   });
 
@@ -43,7 +48,7 @@ const SignUp = () => {
       
       toast({
         title: "Success!",
-        description: "Your student account has been created successfully.",
+        description: "Your mentor account has been created successfully.",
       });
       
       navigate('/');
@@ -71,9 +76,9 @@ const SignUp = () => {
         
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl text-[#03045E]">Create Student Account</CardTitle>
+            <CardTitle className="text-2xl text-[#03045E]">Join as a Mentor</CardTitle>
             <CardDescription>
-              Join Catalift to connect with mentors and accelerate your engineering career
+              Help guide the next generation of engineering talent
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -86,7 +91,7 @@ const SignUp = () => {
                     <FormItem>
                       <FormLabel>Full Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} />
+                        <Input placeholder="Jane Smith" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -121,12 +126,53 @@ const SignUp = () => {
                   )}
                 />
                 
+                <FormField
+                  control={form.control}
+                  name="company"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Current Company</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Google, Microsoft, etc." {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                
+                <FormField
+                  control={form.control}
+                  name="yearsOfExperience"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Years of Experience</FormLabel>
+                      <Select 
+                        onValueChange={field.onChange} 
+                        defaultValue={field.value}
+                      >
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select years of experience" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="1-3">1-3 years</SelectItem>
+                          <SelectItem value="3-5">3-5 years</SelectItem>
+                          <SelectItem value="5-10">5-10 years</SelectItem>
+                          <SelectItem value="10+">10+ years</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                
                 <Button
                   type="submit"
                   className="w-full bg-[#03045E] hover:bg-blue-800"
                   disabled={isLoading}
                 >
-                  {isLoading ? "Creating Account..." : "Create Student Account"}
+                  {isLoading ? "Creating Account..." : "Create Mentor Account"}
                 </Button>
               </form>
             </Form>
@@ -145,4 +191,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default MentorSignUp;
