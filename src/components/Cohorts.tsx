@@ -76,8 +76,17 @@ const Cohorts = () => {
                     <span>Starts: {cohort.startDate}</span>
                   </div>
                 </div>
-                <Button className="w-full bg-[#03045E] hover:bg-blue-800">
-                  Join Cohort
+                <Button 
+                  asChild 
+                  className="w-full bg-[#03045E] hover:bg-blue-800"
+                >
+                  <a 
+                    href="https://forms.gle/MpXw3UAs8Ucsfep89" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Join Cohort
+                  </a>
                 </Button>
               </CardContent>
             </Card>
