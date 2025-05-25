@@ -83,7 +83,7 @@ const MentorSignUp = () => {
           title: "Success!",
           description: "Your mentor account has been created successfully.",
         });
-        navigate('/');
+        navigate('/thank-you');
       }
     } catch (error) {
       toast({

@@ -76,7 +76,7 @@ const SignUp = () => {
           title: "Success!",
           description: "Your student account has been created successfully.",
         });
-        navigate('/');
+        navigate('/thank-you');
       }
     } catch (error) {
       toast({

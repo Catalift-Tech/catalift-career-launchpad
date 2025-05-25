@@ -36,6 +36,17 @@ const SignIn = () => {
       });
 
       if (error) {
+        // Check if the error is due to email not being confirmed
+        if (error.message.includes('Email not confirmed')) {
+          toast({
+            title: "Email Not Confirmed",
+            description: "Please check your email and confirm your account before signing in.",
+            variant: "destructive",
+          });
+          navigate('/email-confirmation');
+          return;
+        }
+
         toast({
           title: "Error",
           description: error.message,
