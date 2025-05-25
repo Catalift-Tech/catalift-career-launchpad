@@ -45,10 +45,16 @@ export const useProfile = () => {
           return;
         }
 
-        setProfile(profileData);
+        // Type assertion to ensure user_type is properly typed
+        const typedProfile: Profile = {
+          ...profileData,
+          user_type: profileData.user_type as 'student' | 'mentor'
+        };
+
+        setProfile(typedProfile);
 
         // If user is a mentor, fetch mentor-specific data
-        if (profileData?.user_type === 'mentor') {
+        if (typedProfile?.user_type === 'mentor') {
           const { data: mentorData, error: mentorError } = await supabase
             .from('mentor_profiles')
             .select('*')
