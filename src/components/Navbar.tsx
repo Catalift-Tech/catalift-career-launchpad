@@ -3,10 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, UserPlus } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
+import UserMenu from "@/components/UserMenu";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { user, loading } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,17 +43,26 @@ const Navbar = () => {
             <a href="#how-it-works" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">How It Works</a>
             <a href="#cohorts" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">Cohorts</a>
             <a href="#webinars" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">Webinars</a>
-            <Button asChild variant="outline" className="ml-4">
-              <Link to="/sign-in">Log In</Link>
-            </Button>
-            <Button asChild variant="outline" className="ml-2">
-              <Link to="/mentor-signup" className="flex items-center gap-1">
-                <UserPlus size={18} /> For Mentor
-              </Link>
-            </Button>
-            <Button asChild className="ml-2 bg-[#03045E] hover:bg-blue-800">
-              <Link to="/sign-up">Get Started</Link>
-            </Button>
+            
+            {loading ? (
+              <div className="w-32 h-10 bg-gray-200 rounded animate-pulse" />
+            ) : user ? (
+              <UserMenu />
+            ) : (
+              <>
+                <Button asChild variant="outline" className="ml-4">
+                  <Link to="/sign-in">Log In</Link>
+                </Button>
+                <Button asChild variant="outline" className="ml-2">
+                  <Link to="/mentor-signup" className="flex items-center gap-1">
+                    <UserPlus size={18} /> For Mentor
+                  </Link>
+                </Button>
+                <Button asChild className="ml-2 bg-[#03045E] hover:bg-blue-800">
+                  <Link to="/sign-up">Get Started</Link>
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,17 +101,28 @@ const Navbar = () => {
               >
                 Webinars
               </a>
-              <Button asChild variant="outline" className="w-full">
-                <Link to="/sign-in" onClick={() => setMobileMenuOpen(false)}>Log In</Link>
-              </Button>
-              <Button asChild variant="outline" className="w-full">
-                <Link to="/mentor-signup" className="flex items-center justify-center gap-1" onClick={() => setMobileMenuOpen(false)}>
-                  <UserPlus size={18} /> For Mentor
-                </Link>
-              </Button>
-              <Button asChild className="w-full bg-[#03045E] hover:bg-blue-800">
-                <Link to="/sign-up" onClick={() => setMobileMenuOpen(false)}>Get Started</Link>
-              </Button>
+              
+              {loading ? (
+                <div className="w-full h-10 bg-gray-200 rounded animate-pulse" />
+              ) : user ? (
+                <div className="pt-4 border-t">
+                  <UserMenu />
+                </div>
+              ) : (
+                <>
+                  <Button asChild variant="outline" className="w-full">
+                    <Link to="/sign-in" onClick={() => setMobileMenuOpen(false)}>Log In</Link>
+                  </Button>
+                  <Button asChild variant="outline" className="w-full">
+                    <Link to="/mentor-signup" className="flex items-center justify-center gap-1" onClick={() => setMobileMenuOpen(false)}>
+                      <UserPlus size={18} /> For Mentor
+                    </Link>
+                  </Button>
+                  <Button asChild className="w-full bg-[#03045E] hover:bg-blue-800">
+                    <Link to="/sign-up" onClick={() => setMobileMenuOpen(false)}>Get Started</Link>
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         )}

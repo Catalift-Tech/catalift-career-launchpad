@@ -3,7 +3,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
@@ -12,10 +11,13 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/contexts/AuthContext";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
+  phone: z.string().min(10, { message: "Please enter a valid phone number" }),
   password: z.string().min(8, { message: "Password must be at least 8 characters" }),
   company: z.string().min(2, { message: "Company name is required" }),
   yearsOfExperience: z.string().min(1, { message: "Years of experience is required" }),
@@ -27,12 +29,21 @@ const MentorSignUp = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const { toast } = useToast();
   const navigate = useNavigate();
+  const { user } = useAuth();
+
+  // Redirect if already authenticated
+  React.useEffect(() => {
+    if (user) {
+      navigate('/');
+    }
+  }, [user, navigate]);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
+      phone: "",
       password: "",
       company: "",
       yearsOfExperience: "",
@@ -43,15 +54,37 @@ const MentorSignUp = () => {
     setIsLoading(true);
     
     try {
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast({
-        title: "Success!",
-        description: "Your mentor account has been created successfully.",
+      const { data, error } = await supabase.auth.signUp({
+        email: values.email,
+        password: values.password,
+        options: {
+          data: {
+            name: values.name,
+            email: values.email,
+            phone_number: values.phone,
+            user_type: 'mentor',
+            company: values.company,
+            yearsOfExperience: values.yearsOfExperience,
+          },
+        },
       });
-      
-      navigate('/');
+
+      if (error) {
+        toast({
+          title: "Error",
+          description: error.message,
+          variant: "destructive",
+        });
+        return;
+      }
+
+      if (data.user) {
+        toast({
+          title: "Success!",
+          description: "Your mentor account has been created successfully.",
+        });
+        navigate('/');
+      }
     } catch (error) {
       toast({
         title: "Error",
@@ -106,6 +139,20 @@ const MentorSignUp = () => {
                       <FormLabel>Email</FormLabel>
                       <FormControl>
                         <Input placeholder="your@email.com" type="email" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Phone Number</FormLabel>
+                      <FormControl>
+                        <Input placeholder="+1 (555) 123-4567" type="tel" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

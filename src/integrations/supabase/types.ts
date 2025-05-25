@@ -9,7 +9,68 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      mentor_profiles: {
+        Row: {
+          company: string | null
+          created_at: string
+          id: string
+          updated_at: string
+          years_of_experience: string | null
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          id: string
+          updated_at?: string
+          years_of_experience?: string | null
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          id?: string
+          updated_at?: string
+          years_of_experience?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "mentor_profiles_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          phone_number: string | null
+          updated_at: string
+          user_type: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id: string
+          phone_number?: string | null
+          updated_at?: string
+          user_type: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          phone_number?: string | null
+          updated_at?: string
+          user_type?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
