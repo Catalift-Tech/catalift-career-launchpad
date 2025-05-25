@@ -13,21 +13,30 @@ export type Database = {
         Row: {
           company: string | null
           created_at: string
+          email: string | null
+          full_name: string | null
           id: string
+          phone_number: string | null
           updated_at: string
           years_of_experience: string | null
         }
         Insert: {
           company?: string | null
           created_at?: string
+          email?: string | null
+          full_name?: string | null
           id: string
+          phone_number?: string | null
           updated_at?: string
           years_of_experience?: string | null
         }
         Update: {
           company?: string | null
           created_at?: string
+          email?: string | null
+          full_name?: string | null
           id?: string
+          phone_number?: string | null
           updated_at?: string
           years_of_experience?: string | null
         }
@@ -70,6 +79,41 @@ export type Database = {
           user_type?: string
         }
         Relationships: []
+      }
+      student_profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          phone_number: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id: string
+          phone_number?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          phone_number?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "student_profiles_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
