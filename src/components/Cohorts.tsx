@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 const cohorts = [
   {
@@ -94,8 +94,10 @@ const Cohorts = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg">
-            View All Cohorts
+          <Button asChild variant="outline" size="lg">
+            <Link to="/cohorts">
+              View All Cohorts
+            </Link>
           </Button>
         </div>
       </div>

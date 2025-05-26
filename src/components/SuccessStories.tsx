@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 const successStories = [
   {
     name: "Aditya Singh",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
     college: "NIT Trichy, 2022",
     achievement: "Software Engineer @ Google",
     story: "With Catalift's mentorship and MAANG interview prep cohort, I landed my dream job at Google. My mentor guided me through the entire process.",
@@ -14,7 +14,7 @@ const successStories = [
   },
   {
     name: "Neha Gupta",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+    image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
     college: "BITS Pilani, 2023",
     achievement: "MS in CS @ Stanford University",
     story: "Catalift helped me build projects that strengthened my application and prepared me for grad school interviews. Forever grateful!",

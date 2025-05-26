@@ -14,6 +14,7 @@ import MentorSignUp from "./pages/MentorSignUp";
 import Dashboard from "./pages/Dashboard";
 import EmailConfirmation from "./pages/EmailConfirmation";
 import ThankYou from "./pages/ThankYou";
+import CohortsList from "./pages/CohortsList";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/cohorts" element={<CohortsList />} />
             <Route path="/coming-soon" element={<ComingSoon />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/sign-up" element={<SignUp />} />
