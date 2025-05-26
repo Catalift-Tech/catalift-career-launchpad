@@ -1,9 +1,6 @@
-
 import React from 'react';
-
 const Footer = () => {
-  return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
+  return <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
@@ -64,11 +61,11 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-start">
                 <span className="text-gray-400 mr-2">📧</span>
-                <a href="mailto:hello@catalift.com" className="text-gray-400 hover:text-white transition-colors">hello@catalift.com</a>
+                <a href="mailto:hello@catalift.com" className="text-gray-400 hover:text-white transition-colors">team@catalift.in</a>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-400 mr-2">📱</span>
-                <span className="text-gray-400">+91 9876543210</span>
+                <span className="text-gray-400">+91 9686713666</span>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-400 mr-2">📍</span>
@@ -82,8 +79,6 @@ const Footer = () => {
           <p>© {new Date().getFullYear()} Catalift. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
