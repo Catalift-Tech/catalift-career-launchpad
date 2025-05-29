@@ -25,15 +25,15 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-0.5' : 'bg-white py-1'}`}>
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between">
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-white'}`}>
+      <div className="container mx-auto px-2 md:px-4">
+        <div className="flex items-center justify-between -my-2">
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <img 
-                src="/lovable-uploads/f9f78053-63ce-481b-b0ae-b570b13ad6c9.png" 
-                alt="Catalift Logo" 
-                className="h-24 w-auto" 
+              <img
+                src="/lovable-uploads/f9f78053-63ce-481b-b0ae-b570b13ad6c9.png"
+                alt="Catalift Logo"
+                className="h-32 w-auto -my-4"
               />
             </a>
           </div>
@@ -43,16 +43,16 @@ const Navbar = () => {
             <a href="#how-it-works" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">How It Works</a>
             <a href="#cohorts" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">Cohorts</a>
             <a href="#webinars" className="font-medium text-gray-700 hover:text-[#03045E] transition-colors">Webinars</a>
-            
+
             {loading ? (
               <div className="w-32 h-10 bg-gray-200 rounded animate-pulse" />
             ) : user ? (
               <UserMenu />
             ) : (
               <>
-                <Button asChild variant="outline" className="ml-4">
+                {/* <Button asChild variant="outline" className="ml-4">
                   <Link to="/sign-in">Log In</Link>
-                </Button>
+                </Button> */}
                 <Button asChild variant="outline" className="ml-2">
                   <Link to="/mentor-signup" className="flex items-center gap-1">
                     <UserPlus size={18} /> For Mentor
@@ -80,28 +80,28 @@ const Navbar = () => {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white absolute top-full left-0 w-full shadow-lg animate-fade-in">
             <div className="px-4 py-4 space-y-4 flex flex-col">
-              <a 
-                href="#how-it-works" 
+              <a
+                href="#how-it-works"
                 className="font-medium text-gray-700 hover:text-[#03045E] transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 How It Works
               </a>
-              <a 
-                href="#cohorts" 
+              <a
+                href="#cohorts"
                 className="font-medium text-gray-700 hover:text-[#03045E] transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Cohorts
               </a>
-              <a 
-                href="#webinars" 
+              <a
+                href="#webinars"
                 className="font-medium text-gray-700 hover:text-[#03045E] transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Webinars
               </a>
-              
+
               {loading ? (
                 <div className="w-full h-10 bg-gray-200 rounded animate-pulse" />
               ) : user ? (

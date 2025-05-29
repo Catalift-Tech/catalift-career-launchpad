@@ -37,7 +37,7 @@ const SuccessStories = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#03045E] mb-4">Success Stories</h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            See how Catalift has helped engineering students achieve their dreams
+            See how Catalift has helped students achieve their dreams.
           </p>
         </div>
 
@@ -46,9 +46,9 @@ const SuccessStories = () => {
             <Card key={index} className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
               <CardContent className="p-6 flex flex-col h-full">
                 <div className="flex items-center mb-6">
-                  <img 
-                    src={story.image} 
-                    alt={story.name} 
+                  <img
+                    src={story.image}
+                    alt={story.name}
                     className="w-16 h-16 rounded-full object-cover mr-4"
                   />
                   <div>
@@ -56,13 +56,13 @@ const SuccessStories = () => {
                     <p className="text-sm text-gray-600">{story.college}</p>
                   </div>
                 </div>
-                
+
                 <Badge className="mb-4 bg-blue-100 text-[#03045E] hover:bg-blue-200 w-fit">
                   {story.achievement}
                 </Badge>
-                
+
                 <p className="text-gray-700 mb-6 flex-grow">"{story.story}"</p>
-                
+
                 <div className="pt-4 border-t border-gray-100">
                   <p className="text-sm text-gray-600">
                     <span className="font-semibold">Mentored by:</span> {story.mentor}
@@ -72,7 +72,7 @@ const SuccessStories = () => {
             </Card>
           ))}
         </div>
-        
+
         <div className="flex justify-center mt-12">
           <div className="bg-white p-6 rounded-2xl shadow-lg max-w-2xl">
             <div className="flex flex-col sm:flex-row gap-6 items-center">

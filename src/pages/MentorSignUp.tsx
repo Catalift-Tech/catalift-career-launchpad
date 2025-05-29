@@ -52,7 +52,7 @@ const MentorSignUp = () => {
 
   const onSubmit = async (values: FormValues) => {
     setIsLoading(true);
-    
+
     try {
       const { data, error } = await supabase.auth.signUp({
         email: values.email,
@@ -100,13 +100,13 @@ const MentorSignUp = () => {
     <div className="min-h-screen flex items-center justify-center bg-blue-50/50 px-4 py-8">
       <div className="w-full max-w-md">
         <Link to="/" className="flex justify-center mb-8">
-          <img 
-            src="/lovable-uploads/f9f78053-63ce-481b-b0ae-b570b13ad6c9.png" 
-            alt="Catalift Logo" 
-            className="h-24 w-auto" 
+          <img
+            src="/lovable-uploads/f9f78053-63ce-481b-b0ae-b570b13ad6c9.png"
+            alt="Catalift Logo"
+            className="h-36 w-auto py-0"
           />
         </Link>
-        
+
         <Card>
           <CardHeader>
             <CardTitle className="text-2xl text-[#03045E]">Join as a Mentor</CardTitle>
@@ -124,13 +124,13 @@ const MentorSignUp = () => {
                     <FormItem>
                       <FormLabel>Full Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Jane Smith" {...field} />
+                        <Input placeholder="Your Name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="email"
@@ -144,7 +144,7 @@ const MentorSignUp = () => {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="phone"
@@ -152,13 +152,13 @@ const MentorSignUp = () => {
                     <FormItem>
                       <FormLabel>Phone Number</FormLabel>
                       <FormControl>
-                        <Input placeholder="+1 (555) 123-4567" type="tel" {...field} />
+                        <Input placeholder="+XX XXXXXXXXXX" type="tel" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="password"
@@ -166,13 +166,13 @@ const MentorSignUp = () => {
                     <FormItem>
                       <FormLabel>Password</FormLabel>
                       <FormControl>
-                        <Input placeholder="••••••••" type="password" {...field} />
+                        <Input placeholder="Your Password" type="password" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="company"
@@ -180,21 +180,21 @@ const MentorSignUp = () => {
                     <FormItem>
                       <FormLabel>Current Company</FormLabel>
                       <FormControl>
-                        <Input placeholder="Google, Microsoft, etc." {...field} />
+                        <Input placeholder="Current Organisation" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="yearsOfExperience"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Years of Experience</FormLabel>
-                      <Select 
-                        onValueChange={field.onChange} 
+                      <Select
+                        onValueChange={field.onChange}
                         defaultValue={field.value}
                       >
                         <FormControl>
@@ -213,7 +213,7 @@ const MentorSignUp = () => {
                     </FormItem>
                   )}
                 />
-                
+
                 <Button
                   type="submit"
                   className="w-full bg-[#03045E] hover:bg-blue-800"

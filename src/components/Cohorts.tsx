@@ -49,9 +49,9 @@ const Cohorts = () => {
           {cohorts.map((cohort, index) => (
             <Card key={index} className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
               <div className="h-48 overflow-hidden">
-                <img 
-                  src={cohort.image} 
-                  alt={cohort.title} 
+                <img
+                  src={cohort.image}
+                  alt={cohort.title}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -76,13 +76,13 @@ const Cohorts = () => {
                     <span>Starts: {cohort.startDate}</span>
                   </div>
                 </div>
-                <Button 
-                  asChild 
+                <Button
+                  asChild
                   className="w-full bg-[#03045E] hover:bg-blue-800"
                 >
-                  <a 
-                    href="https://forms.gle/MpXw3UAs8Ucsfep89" 
-                    target="_blank" 
+                  <a
+                    href="https://pages.razorpay.com/catalift-cohorts"
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     Join Cohort

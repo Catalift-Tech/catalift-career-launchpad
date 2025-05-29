@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { z } from "zod";
+import { date, z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { supabase } from "@/integrations/supabase/client";
@@ -17,7 +17,11 @@ const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().min(10, { message: "Please enter a valid phone number" }),
-  password: z.string().min(8, { message: "Password must be at least 8 characters" }),
+  collegeName: z.string().min(2, { message: "Institute name is required" }),
+  dateOfbirth: z.string().min(1, { message: "Enter a valid date" }),
+  address: z.string().min(5, { message: "Enter your address" }),
+  gender: z.string().min(1, { message: "Select your gender" }),
+  motherTongue: z.string().min(2, { message: "Mention your Mother Tongue" }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -41,13 +45,17 @@ const SignUp = () => {
       name: "",
       email: "",
       phone: "",
-      password: "",
+      collegeName: "",
+      dateOfbirth : "",
+      address: "",
+      motherTongue: "",
+      gender: "",
     },
   });
 
   const onSubmit = async (values: FormValues) => {
     setIsLoading(true);
-    
+
     try {
       const { data, error } = await supabase.auth.signUp({
         email: values.email,
@@ -57,6 +65,11 @@ const SignUp = () => {
             name: values.name,
             email: values.email,
             phone_number: values.phone,
+            student_id: values.collegeName,
+            date_of_birth: values.dateOfBirth,
+            address: values.address,
+            mother_tongue: values.motherTongue,
+            gender: values.gender,
             user_type: 'student',
           },
         },
@@ -93,16 +106,16 @@ const SignUp = () => {
     <div className="min-h-screen flex items-center justify-center bg-blue-50/50 px-4 py-8">
       <div className="w-full max-w-md">
         <Link to="/" className="flex justify-center mb-8">
-          <img 
-            src="/lovable-uploads/f9f78053-63ce-481b-b0ae-b570b13ad6c9.png" 
-            alt="Catalift Logo" 
-            className="h-24 w-auto" 
+          <img
+            src="/lovable-uploads/f9f78053-63ce-481b-b0ae-b570b13ad6c9.png"
+            alt="Catalift Logo"
+            className="h-36 w-auto py-0"
           />
         </Link>
-        
+
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl text-[#03045E]">Create Student Account</CardTitle>
+            <CardTitle className="text-2xl text-[#03045E]">Connect to Mentors</CardTitle>
             <CardDescription>
               Join Catalift to connect with mentors and accelerate your engineering career
             </CardDescription>
@@ -117,13 +130,13 @@ const SignUp = () => {
                     <FormItem>
                       <FormLabel>Full Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} />
+                        <Input placeholder="Your Name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="email"
@@ -137,7 +150,7 @@ const SignUp = () => {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="phone"
@@ -145,27 +158,88 @@ const SignUp = () => {
                     <FormItem>
                       <FormLabel>Phone Number</FormLabel>
                       <FormControl>
-                        <Input placeholder="+1 (555) 123-4567" type="tel" {...field} />
+                        <Input placeholder="+XX XXXXXXXXXX" type="tel" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                
                 <FormField
-                  control={form.control}
-                  name="password"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Password</FormLabel>
-                      <FormControl>
-                        <Input placeholder="••••••••" type="password" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
+                control={form.control}
+                name="universityName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Institute/University Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter university name" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="dateOfBirth"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Date of Birth</FormLabel>
+                    <FormControl>
+                      <Input type="date" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="address"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Address</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter your address" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="motherTongue"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Mother Tongue</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter your mother tongue" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="gender"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Gender</FormLabel>
+                    <FormControl>
+                      <select
+                        {...field}
+                        className="w-full p-2 border rounded-md"
+                      >
+                        <option value="">Select gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
                 <Button
                   type="submit"
                   className="w-full bg-[#03045E] hover:bg-blue-800"

@@ -12,7 +12,7 @@ const Webinars = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#03045E] mb-4">Upcoming Webinars</h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Join live sessions with engineering leaders from top companies
+            Join live sessions with leaders from top companies.
           </p>
         </div>
 
@@ -33,9 +33,9 @@ const Webinars = () => {
                     Learn how to approach system design interview questions at top tech companies with practical examples and strategies.
                   </p>
                   <div className="flex items-center mb-6">
-                    <img 
-                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80" 
-                      alt="Amit Sharma" 
+                    <img
+                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80"
+                      alt="Amit Sharma"
                       className="w-12 h-12 rounded-full object-cover mr-4"
                     />
                     <div>
@@ -44,14 +44,18 @@ const Webinars = () => {
                     </div>
                   </div>
                   <Button className="w-full sm:w-auto bg-[#03045E] hover:bg-blue-800">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdR2VBJ58G-BazNnML_pYcQnZkKZmYr98LSyia4PQaKdvbqoA/viewform?pli=1"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     Register Now
+                    </a>
                   </Button>
                 </div>
                 <div className="h-64 md:h-auto overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-blue-900/20"></div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
-                    alt="System Design Webinar" 
+                  <img
+                    src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+                    alt="System Design Webinar"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -71,9 +75,9 @@ const Webinars = () => {
                   Practical guide to building and deploying microservices that can handle millions of users.
                 </p>
                 <div className="flex items-center mb-6">
-                  <img 
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1288&q=80" 
-                    alt="Priya Mehta" 
+                  <img
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1288&q=80"
+                    alt="Priya Mehta"
                     className="w-10 h-10 rounded-full object-cover mr-3"
                   />
                   <div>
@@ -82,7 +86,11 @@ const Webinars = () => {
                   </div>
                 </div>
                 <Button variant="outline" className="w-full hover:bg-blue-50">
-                  Register Now
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdR2VBJ58G-BazNnML_pYcQnZkKZmYr98LSyia4PQaKdvbqoA/viewform?pli=1"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Register Now
+                    </a>
                 </Button>
               </CardContent>
             </Card>
@@ -98,9 +106,9 @@ const Webinars = () => {
                   Explore different career paths in machine learning and AI engineering, from research to production.
                 </p>
                 <div className="flex items-center mb-6">
-                  <img 
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
-                    alt="Rohit Kumar" 
+                  <img
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Rohit Kumar"
                     className="w-10 h-10 rounded-full object-cover mr-3"
                   />
                   <div>
@@ -109,7 +117,11 @@ const Webinars = () => {
                   </div>
                 </div>
                 <Button variant="outline" className="w-full hover:bg-blue-50">
-                  Register Now
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdR2VBJ58G-BazNnML_pYcQnZkKZmYr98LSyia4PQaKdvbqoA/viewform?pli=1"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Register Now
+                    </a>
                 </Button>
               </CardContent>
             </Card>

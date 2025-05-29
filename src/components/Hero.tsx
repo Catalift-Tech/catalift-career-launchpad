@@ -12,11 +12,11 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="flex-1 text-center lg:text-left animate-fade-in-up">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#03045E] mb-6">
-              Your Engineering Journey, 
-              <span className="text-blue-500 block md:inline"> Guided by Those Who've Been There</span>
+              Get your dream placements,
+              <span className="text-blue-500 block md:inline"> and internships</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-lg mx-auto lg:mx-0">
-              Connect with experienced alumni mentors who can help you navigate your engineering career, build in-demand skills, and achieve your goals.
+              Connect with experienced alumni mentors who can help you navigate your career, by upskilling yourself, and achieving your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button asChild size="lg" className="bg-[#03045E] hover:bg-blue-800 text-white">
@@ -36,7 +36,7 @@ const Hero = () => {
                 <div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white text-xs font-bold border-2 border-white">P</div>
                 <div className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white text-xs font-bold border-2 border-white">+</div>
               </div>
-              <p className="text-sm">Joined by <span className="font-bold">25,000+</span> engineering students across India</p>
+              <p className="text-sm">Joined by <span className="font-bold">2,500+</span>  students across India</p>
             </div>
           </div>
           <div className="flex-1 w-full max-w-md lg:max-w-none animate-fade-in">
@@ -45,17 +45,17 @@ const Hero = () => {
               <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-[#03045E] opacity-10 rounded-full"></div>
               <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                 <div className="p-1">
-                  <img 
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
-                    alt="Engineering students with mentor" 
+                  <img
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+                    alt="Engineering students with mentor"
                     className="w-full h-auto rounded-xl"
                   />
                 </div>
                 <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
                   <div className="flex items-center gap-3">
-                    <img 
-                      src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1061&q=80" 
-                      alt="Mentor profile" 
+                    <img
+                      src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1061&q=80"
+                      alt="Mentor profile"
                       className="w-10 h-10 rounded-full object-cover"
                     />
                     <div>
