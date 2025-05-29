@@ -7,13 +7,13 @@ const Footer = () => {
             <div className="mb-2">
               {/* <span className="text-2xl font-bold">Cata<span className="text-blue-400">lift</span></span> */}
               <img
-                src="src\Catalift_logo_white.png"
+                src="src/Catalift_logo_white.png"
                 alt="Catalift Logo"
                 className="h-32 w-auto -my-10"
               />
             </div>
             <p className="text-gray-400 mb-4">
-              Connecting engineering students with alumni mentors to navigate career paths with confidence.
+              Connecting students with alumni mentors to navigate career paths with confidence.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
