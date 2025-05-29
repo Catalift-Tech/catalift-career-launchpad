@@ -1,12 +1,12 @@
 
 import React from 'react';
-import { 
-  Users, 
-  Award, 
-  Book, 
-  Video, 
-  Briefcase, 
-  MessageSquare 
+import {
+  Users,
+  Award,
+  Book,
+  Video,
+  Briefcase,
+  MessageSquare
 } from "lucide-react";
 
 const features = [
@@ -49,7 +49,7 @@ const Features = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#03045E] mb-4">How We Support Your Journey</h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Comprehensive support at every stage of your engineering career
+            Comprehensive support at every stage of your career
           </p>
         </div>
 
