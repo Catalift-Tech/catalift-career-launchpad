@@ -31,7 +31,7 @@ const HowItWorks = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#03045E] mb-4">How Catalift Works</h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            A simple process designed to help you excel in your engineering journey
+            A simple process designed to help you excel in your journey
           </p>
         </div>
 
