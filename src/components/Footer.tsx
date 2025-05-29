@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="mb-2">
               {/* <span className="text-2xl font-bold">Cata<span className="text-blue-400">lift</span></span> */}
               <img
-                src="src/Catalift_logo_white.png"
+                src="https://raw.githubusercontent.com/Catalift-Tech/catalift-career-launchpad/main/src/Catalift_logo_white.png"
                 alt="Catalift Logo"
                 className="h-32 w-auto -my-10"
               />
