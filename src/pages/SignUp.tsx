@@ -251,12 +251,12 @@ const SignUp = () => {
             </Form>
           </CardContent>
           <CardFooter className="flex flex-col space-y-4">
-            <div className="text-sm text-center">
+            {/* <div className="text-sm text-center">
               Already have an account?{" "}
               <Link to="/sign-in" className="text-blue-600 hover:underline">
                 Sign in
               </Link>
-            </div>
+            </div> */}
           </CardFooter>
         </Card>
       </div>
