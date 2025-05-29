@@ -224,14 +224,14 @@ const MentorSignUp = () => {
               </form>
             </Form>
           </CardContent>
-          <CardFooter className="flex flex-col space-y-4">
+          {/* <CardFooter className="flex flex-col space-y-4">
             <div className="text-sm text-center">
               Already have an account?{" "}
               <Link to="/sign-in" className="text-blue-600 hover:underline">
                 Sign in
               </Link>
             </div>
-          </CardFooter>
+          </CardFooter> */}
         </Card>
       </div>
     </div>
