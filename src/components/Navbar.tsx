@@ -110,9 +110,9 @@ const Navbar = () => {
                 </div>
               ) : (
                 <>
-                  <Button asChild variant="outline" className="w-full">
+                  {/* <Button asChild variant="outline" className="w-full">
                     <Link to="/sign-in" onClick={() => setMobileMenuOpen(false)}>Log In</Link>
-                  </Button>
+                  </Button> */}
                   <Button asChild variant="outline" className="w-full">
                     <Link to="/mentor-signup" className="flex items-center justify-center gap-1" onClick={() => setMobileMenuOpen(false)}>
                       <UserPlus size={18} /> For Mentor
